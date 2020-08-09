@@ -3,7 +3,7 @@ include "functions_bd.php";
 
 
 
-$zayavl=get_all_zayavl_by_forma_uroven($_GET['iduroven'],$_GET['idform']);
+$zayavl=get_all_zayavl_by_spec($_GET['idspec']);
 
 
 ?>

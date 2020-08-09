@@ -519,12 +519,12 @@ global $mysqli;
 }
 // Админка-------------------------------------------------------------
 
- function get_all_zayavl_by_forma_uroven($iduroven,$idform)
+ function get_all_zayavl_by_spec($idspecialization)
  //получить список уровней
  {
 	global $mysqli;
 	connectdb();
-	$result = mysqli_query($mysqli,"SELECT abiturient.idabiturient, abiturient.fio, abiturient.tel, abiturient.reg_date, abiturient.email, zayavlenie.idzayavl, zayavlenie.`comment`, `status`.name_status, specialization.specialization, zayavlenie.prioritet, napravleniya.Napr FROM zayavlenie join abiturient on zayavlenie.idabiturient=abiturient.idabiturient join specialization on zayavlenie.idspecialization=specialization.idspecialization join napravleniya on specialization.idnapr=napravleniya.idNapr join `status` on zayavlenie.idstatus=`status`.idstatus  where napravleniya.idForma=$idform and napravleniya.idUroven=$iduroven and prioritet=1 order by reg_date");
+	$result = mysqli_query($mysqli,"SELECT abiturient.idabiturient, abiturient.fio, abiturient.tel, abiturient.reg_date, abiturient.email, zayavlenie.idzayavl, zayavlenie.`comment`, `status`.name_status, specialization.specialization, zayavlenie.prioritet, napravleniya.Napr FROM zayavlenie join abiturient on zayavlenie.idabiturient=abiturient.idabiturient join specialization on zayavlenie.idspecialization=specialization.idspecialization join napravleniya on specialization.idnapr=napravleniya.idNapr join `status` on zayavlenie.idstatus=`status`.idstatus  where zayavlenie.idspecialization=$idspecialization and prioritet=1 order by reg_date DESC");
     
 	
 	closedb();

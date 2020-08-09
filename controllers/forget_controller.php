@@ -10,8 +10,8 @@ $pass=$abi['pass'];
 $to      = $abi['email'];
 $subject = 'Восстановление пароля';
 $message ="Ваш логин: $tel"."\r\n"."Ваш пароль: $pass";
-$headers = 'From: port@donampa.ru' . "\r\n" .
-    'Reply-To: port@donampa.ru' . "\r\n" .
+$headers = 'From: priem@donampa.ru' . "\r\n" .
+    'Reply-To: priem@donampa.ru' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);

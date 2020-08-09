@@ -43,8 +43,8 @@ else {$n=add_abiturient( trim($_POST['fio']), trim($_POST['tel']), $_POST['pers'
 $to      = trim($_POST['email']);
 $subject = 'Поступление в ГОУ ВПО "ДонАУиГС"';
 $message = 'Вы успешно зарегистрировались в личном кабинете абитурента ГОУ ВПО "ДонАУиГС". Ваш логин: '.trim($_POST['tel']).'  Ваш пароль: '.trim($_POST['pass']);
-$headers = 'From: port@donampa.ru' . "\r\n" .
-    'Reply-To: port@donampa.ru' . "\r\n" .
+$headers = 'From: priem@donampa.ru' . "\r\n" .
+    'Reply-To: priem@donampa.ru' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);
